@@ -1,0 +1,12 @@
+alias vim=/Applications/MacVim.app/Contents/MacOS/vim
+
+# variants of ls
+alias ll="ls -l"
+alias l=ll
+alias la="ls -a"
+alias all="ls -al"
+
+# git shortcuts
+alias g=git
+alias push="git push"
+alias pull="git pull"

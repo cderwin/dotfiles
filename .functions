@@ -1,0 +1,1 @@
+psclone() { git clone bitbucket:predictivescience/$1; }

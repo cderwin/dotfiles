@@ -1,0 +1,11 @@
+[user]
+	email = camderwin@gmail.com
+	name = Cameron Derwin
+[core]
+	editor = vim
+[color]
+	ui = true
+[push]
+	default = simple
+[alias]
+    co = checkout
