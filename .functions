@@ -1,1 +1,6 @@
+#!/bin/bash
+# Custom bash functions
+
 psclone() { git clone bitbucket:predictivescience/$1; }
+
+mkd() { mkdir $@; cd $@; }
