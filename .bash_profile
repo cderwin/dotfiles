@@ -5,17 +5,18 @@ source $HOME/.alias
 source $HOME/.functions
 source $HOME/.exports
 source $HOME/.path
+source $HOME/.bash_prompt
 
 # We want to import this and be able to override it
 source $HOME/.profile
 
 # This files commands go here
 
-# Initialize rbenv
-eval "$(rbenv init -)"
+# Initialize rbenv (quietly)
+[ -d $HOME/.rbenv ] && eval "$(rbenv init -)"
 
 # Enable completion for non-system bash
-source $HOME/.git-completion.bash
+[ -f $HOME/.git-completion.bash ] && source $HOME/.git-completion.bash
 
 # Local configs should override everything
 source $HOME/.localrc

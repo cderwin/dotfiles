@@ -2,4 +2,3 @@
 # Environment variables other than $PATH (set in .path)
 
 export EDITOR=vim
-export dotfiles="$HOME/dotfiles/dotfiles"

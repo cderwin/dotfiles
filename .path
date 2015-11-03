@@ -1,3 +1,1 @@
-export PATH="/usr/local/Cellar/git/bin:$PATH"
 export PATH="$HOME/.rbenv/bin:$PATH"
-export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
