@@ -1,6 +1,6 @@
 #!/usr/local/bin/bash
 
-FILES=$(cat .manifest)
+FILES=$(cat manifest)
 if git diff-index --quiet HEAD; then
     echo "Copying $fname"
     for fname in $FILES; do
