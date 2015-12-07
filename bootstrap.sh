@@ -5,8 +5,10 @@ cd "$(dirname "${BASH_SOURCE}")";
 git pull origin master;
 
 function doIt() {
-	rsync --exclude ".git/" --exclude ".DS_Store" --exclude "bootstrap.sh" \
-		--exclude "README.md" --exclude "LICENSE-MIT.txt" --exclude "Makefile" -avh --no-perms . ~;
+    FILES=$(cat manifest)
+    for fname in $FILE; do
+        cp $fname ~/.$fname
+    done
 	source ~/.bash_profile;
 }
 

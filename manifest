@@ -1,0 +1,15 @@
+alias
+bash_profile
+bash_prompt
+bashrc
+exports
+functions
+gitconfig
+gitignore
+hushlogin
+inputrc
+localrc
+path
+profile
+screenrc
+vimrc
