@@ -39,6 +39,12 @@ Plugin 'VundleVim/Vundle.vim'
 " Avoid a name conflict with L9
 " Plugin 'user/L9', {'name': 'newL9'}
 
+" ctrlp fuzzy filepath search
+Plugin 'kien/ctrlp.vim'
+
+" Git commands in vim
+Plugin 'tpope/vim-fugitive'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -170,6 +176,13 @@ set notimeout ttimeout ttimeoutlen=200
 " Use <F11> to toggle between 'paste' and 'nopaste'
 set pastetoggle=<F11>
 
+"------------------------------------------------------------
+" Begin Custom Commands
+"
+"------------------------------------------------------------
+
+let mapleader=","
+let maplocalleader="\\"
 
 "------------------------------------------------------------
 " Indentation options {{{1
@@ -181,6 +194,7 @@ set pastetoggle=<F11>
 set shiftwidth=4
 set softtabstop=4
 set tabstop=4
+set shiftround
 set expandtab
 set autoindent
 set smarttab
@@ -198,8 +212,93 @@ set smarttab
 
 " Map Y to act like D and C, i.e. to yank until EOL, rather than act as yy,
 " which is the default
-map Y y$
+nnoremap Y y$
 
 " Map <C-L> (redraw screen) to also turn off search highlighting until the
 " next search
 nnoremap <C-L> :nohl<CR><C-L>
+
+" Swapping text shortcuts
+" Switch current char with next
+nnoremap gc xp
+
+" Switch current char with previous
+nnoremap gC xP
+
+" Switch word with next (not across newlines)
+" nnoremap <silent> gw "_yiw:s/\(\%#\w\+\)\(\W\+\)\(\w\+\)/\3\2\1/<CR><c-o><c-l>
+
+" Switch current word with previous
+" nnoremap <silent> gl "_yiw?\w\+\_W\+\%#<CR>:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><c-o><c-l>
+
+" Swap current word with next, keepig curser on current work
+" nnoremap <silent> gr "_yiw:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><c-o>/\w\+\_W\+<CR><c-l>
+
+" Swap current line with the one below
+nnoremap g$ ddp
+
+" Swap current line with the one above
+nnoremap g^ ddkP
+
+" Swap current paragraph with the next
+" nnoremap g{ {dap}p{
+"
+" Disabled keys
+nnoremap <Up> <nop>
+nnoremap <Down> <nop>
+nnoremap <Left> <nop>
+nnoremap <Right> <nop>
+
+" capitalize a word with Ctrl-u
+inoremap <c-u> <esc>viwUi
+nnoremap <c-u> viwU
+
+" Insert blank lines
+nnoremap <Leader>o o<esc>k
+nnoremap <Leader>O O<esc>j
+
+" Page up and page down on keyboards without the keys
+noremap <Leader>u <PageUp>
+noremap <Leader>d <PageDown>
+
+" Make it easier to (Make it easier to (edit my ~/.vimrc))
+noremap <Leader>v :vsplit $MYVIMRC<cr><C-L>
+noremap <Leader>V :source $MYVIMRC<cr>
+
+" Surround in quotes
+nnoremap <Leader>" viw<esc>a"<esc>hbi"<esc>lel
+nnoremap <Leader>' viw<esc>a'<esc>hbi'<esc>lel
+nnoremap <Leader>ds O'''<esc>jo'''<esc>k$
+vnoremap <Leader>" <esc>'<i"<esc>'>a"<esc>
+vnoremap <Leader>' <esc>'<i'<esc>'>a'<esc>
+vnoremap <Leader>ds <esc>'<O'''<esc>'>o'''<esc>k$
+
+" Moving around
+nnoremap <s-l> gt
+nnoremap <s-h> gT
+nnoremap <c-h> <c-w>h
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-l> <c-w>l
+
+" Save/quitting files
+nnoremap <Leader>q :q<cr>
+nnoremap <Leader>s :w<cr>
+nnoremap <Leader>sq :wq<cr>
+nnoremap <Leader><Leader> :w<cr>
+inoremap <Leader>s <esc>:w<cr>i
+inoremap <Leader>S <esc>:w<cr>
+inoremap <Leader><Leader> <esc>:w<cr>
+
+" Break block paragraph lines at 80 chars
+nnoremap <Leader>b vipJgq80l
+vnoremap <Leader>b <esc>Jgw80l
+
+" Shprtcuts for macros
+nnoremap Q @q
+
+"------------------------------------------------------------
+" Abbreviations
+
+iabbrev df def():<left><left><left>
+iabbrev cl class():<left><left><left>

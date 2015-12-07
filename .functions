@@ -4,3 +4,4 @@
 psclone() { git clone ps-bitbucket:predictivescience/$1; }
 
 mkd() { mkdir $@; cd $@; }
+cdl() { cd "$@" && ls; }
