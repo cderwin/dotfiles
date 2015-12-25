@@ -36,3 +36,15 @@ alias reload="exec $SHELL -l"
 
 # Empty volume trashes, home trash, clear system logs and Quarantine download history
 alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl; sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'"
+
+# Concat multiple ssh configs
+alias ssh-configure="cat ~/.ssh/cfg/* > ~/.ssh/config"
+alias ssh="ssh-configure && ssh"
+
+# git aliases
+alias gs="git status"
+alias gd="git diff"
+alias gb="git branch"
+
+# Source ~/.ps_alias (aliases for predictive science)
+source ~/.ps_alias

@@ -294,8 +294,18 @@ inoremap <Leader><Leader> <esc>:w<cr>
 nnoremap <Leader>b vipJgq80l
 vnoremap <Leader>b <esc>Jgw80l
 
-" Shprtcuts for macros
+" Shortcuts for macros
 nnoremap Q @q
+
+" Set wildignore ffor ctrlp
+set wildignore+=*/.git/*,*.pyc,*.pyo,.*.sw*
+
+" Open the file manager in a new tab
+nnoremap <Leader>t :Tex<cr>
+
+" Paste from system clipboard
+nnoremap <Leader>p "*p
+nnoremap <Leader>P "*P
 
 "------------------------------------------------------------
 " Abbreviations
