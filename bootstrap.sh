@@ -6,7 +6,7 @@ git pull origin master;
 
 function doIt() {
     FILES=$(cat manifest)
-    for fname in $FILE; do
+    for fname in $FILES; do
         cp $fname ~/.$fname
     done
 	source ~/.bash_profile;

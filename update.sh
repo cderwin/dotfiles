@@ -1,4 +1,4 @@
-#!/usr/local/bin/bash
+#!/bin/bash
 
 FILES=$(cat manifest)
 if git diff-index --quiet HEAD; then
