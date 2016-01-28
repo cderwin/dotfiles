@@ -45,6 +45,14 @@ Plugin 'kien/ctrlp.vim'
 " Git commands in vim
 Plugin 'tpope/vim-fugitive'
 
+" Fix netrw sort, among other things
+Plugin 'tpope/vim-vinegar'
+
+" Extra syntax highlighting elixir/es6
+Plugin 'elixir-lang/vim-elixir'
+Plugin 'othree/yajs.vim'
+Plugin 'othree/es.next.syntax.vim'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required

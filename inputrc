@@ -7,11 +7,6 @@ set show-all-if-ambiguous on
 # Immediately add a trailing slash when autocompleting symlinks to directories
 set mark-symlinked-directories on
 
-# Use the text that has already been typed as the prefix for searching through
-# commands (i.e. more intelligent Up/Down behavior)
-"\e[B": history-search-forward
-"\e[A": history-search-backward
-
 # Show all autocomplete results at once
 set page-completions off
 
@@ -33,9 +28,34 @@ set input-meta on
 set output-meta on
 set convert-meta off
 
-# Use Alt/Meta + Delete to delete the preceding word
-"\e[3;3~": kill-word
+# Turn the bell off
+set bell-style none
 
 # Use vi shortcuts in bash (or whatever shell is sourcing this file)
 set editing-mode vi
+$if mode=vi
+
 set keymap vi-command
+
+# Intelligent history search
+"\e[B": history-search-forward
+"\e[A": history-search-backward
+
+# Get default history
+"j": next-history
+"k": previous-history
+
+set keymap vi-insert
+
+# Same as above
+"\e[B": history-search-forward
+"\e[A": history-search-backward
+
+# Use Alt/Meta + Delete to delete the preceding word
+"\e[3;3~": kill-word
+
+# Use emacs C-a and C-e
+"\C-a": beginning-of-line
+"\C-e": end-of-line
+
+$endif

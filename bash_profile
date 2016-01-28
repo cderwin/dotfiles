@@ -18,6 +18,9 @@ source $HOME/.profile
 # Initialize ansible
 [ -d $HOME/.ansible ] && source $HOME/.ansible/hacking/env-setup > /dev/null 2>&1
 
+# Initialize autojump
+[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
+
 # Enable completion for non-system bash
 [ -f $HOME/.git-completion.bash ] && source $HOME/.git-completion.bash
 
