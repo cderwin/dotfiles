@@ -21,3 +21,7 @@
     da = !git add -A && git diff --cached
 	br = branch
 	cm = commit -m
+[flake8]
+    complexity = 10
+    strict = True
+    lazy = True
