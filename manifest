@@ -12,4 +12,5 @@ localrc
 path
 profile
 screenrc
+tmux.conf
 vimrc
