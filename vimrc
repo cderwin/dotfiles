@@ -1,43 +1,12 @@
-" URL: http://vim.wikia.com/wiki/Example_vimrc
-" Authors: http://vim.wikia.com/wiki/Vim_on_Freenode
-" Description: A minimal, but feature rich, example .vimrc. If you are a
-"              newbie, basing your first .vimrc on this file is a good choice.
-"              If you're a more advanced user, building your own .vimrc based
-"              on this file is still a good idea.
-
-"------------------------------------------------------------
-" Features {{{1
-"
-" These options and commands enable some very useful features in Vim, that
-" no user should have to live without.
-
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-" plugin on GitHub repo
-" Plugin 'tpope/vim-fugitive'
-" plugin from http://vim-scripts.org/vim/scripts.html
-" Plugin 'L9'
-" Git plugin not hosted on GitHub
-" Plugin 'git://git.wincent.com/command-t.git'
-" git repos on your local machine (i.e. when working on your own plugin)
-" Plugin 'file:///home/gmarik/path/to/plugin'
-" The sparkup vim script is in a subdirectory of this repo called vim.
-" Pass the path to set the runtimepath properly.
-" Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-" Avoid a name conflict with L9
-" Plugin 'user/L9', {'name': 'newL9'}
 
 " ctrlp fuzzy filepath search
 Plugin 'kien/ctrlp.vim'
@@ -52,6 +21,9 @@ Plugin 'tpope/vim-vinegar'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'othree/yajs.vim'
 Plugin 'othree/es.next.syntax.vim'
+
+" Tmux iontegration
+Plugin 'christoomey/vim-tmux-navigator'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -81,6 +53,12 @@ filetype indent plugin on
 
 " Enable syntax highlighting
 syntax on
+
+
+" Activate vim powerline
+" python from powerline.vim import setup as powerline_setup
+" python powerline_setup()
+" python del powerline_setup
 
 
 "------------------------------------------------------------
@@ -115,8 +93,8 @@ set wildmenu
 " Show partial commands in the last line of the screen
 set showcmd
 
-" Highlight searches (use <C-L> to temporarily turn off highlighting; see the
-" mapping of <C-L> below)
+" Highlight searches (use <subtopic-L> to temporarily turn off highlighting; see the
+" mapping of <subtopic-L> below)
 set hlsearch
 
 " Modelines have historically been a source of security vulnerabilities. As
@@ -222,9 +200,9 @@ set smarttab
 " which is the default
 nnoremap Y y$
 
-" Map <C-L> (redraw screen) to also turn off search highlighting until the
+" Map <subtopic-L> (redraw screen) to also turn off search highlighting until the
 " next search
-nnoremap <C-L> :nohl<CR><C-L>
+nnoremap <subtopic-L> :nohl<CR><subtopic-L>
 
 " Swapping text shortcuts
 " Switch current char with next
@@ -234,13 +212,16 @@ nnoremap gc xp
 nnoremap gC xP
 
 " Switch word with next (not across newlines)
-" nnoremap <silent> gw "_yiw:s/\(\%#\w\+\)\(\W\+\)\(\w\+\)/\3\2\1/<CR><c-o><c-l>
+" nnoremap <silent> gw
+" "_yiw:s/\(\%#\w\+\)\(\W\+\)\(\w\+\)/\3\2\1/<CR><c-o><subtopic-l>
 
 " Switch current word with previous
-" nnoremap <silent> gl "_yiw?\w\+\_W\+\%#<CR>:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><c-o><c-l>
+" nnoremap <silent> gl
+" "_yiw?\w\+\_W\+\%#<CR>:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><c-o><subtopic-l>
 
 " Swap current word with next, keepig curser on current work
-" nnoremap <silent> gr "_yiw:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><c-o>/\w\+\_W\+<CR><c-l>
+" nnoremap <silent> gr
+" "_yiw:s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR><c-o>/\w\+\_W\+<CR><subtopic-l>
 
 " Swap current line with the one below
 nnoremap g$ ddp
@@ -284,10 +265,6 @@ vnoremap <Leader>ds <esc>'<O'''<esc>'>o'''<esc>k$
 " Moving around
 nnoremap <s-l> gt
 nnoremap <s-h> gT
-nnoremap <c-h> <c-w>h
-nnoremap <c-j> <c-w>j
-nnoremap <c-k> <c-w>k
-nnoremap <c-l> <c-w>l
 
 " Save/quitting files
 nnoremap <Leader>q :q<cr>
@@ -305,7 +282,7 @@ vnoremap <Leader>b <esc>Jgw80l
 " Shortcuts for macros
 nnoremap Q @q
 
-" Set wildignore ffor ctrlp
+" Set wildignore for ctrlp
 set wildignore+=*/.git/*,*.pyc,*.pyo,.*.sw*
 
 " Open the file manager in a new tab
