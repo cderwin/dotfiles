@@ -17,8 +17,10 @@ Plugin 'tpope/vim-fugitive'
 " Fix netrw sort, among other things
 Plugin 'tpope/vim-vinegar'
 
-" Extra syntax highlighting elixir/es6
+" Extra syntax highlighting elixir, rust, es6
 Plugin 'elixir-lang/vim-elixir'
+Plugin 'rust-lang/rust.vim'
+Plugin 'fatih/vim-go'
 Plugin 'othree/yajs.vim'
 Plugin 'othree/es.next.syntax.vim'
 
