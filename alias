@@ -50,4 +50,4 @@ alias gb="git branch"
 alias npm-exec="PATH=$(npm bin):$PATH"
 
 # Source ~/.ps_alias (aliases for predictive science)
-source ~/.ps_alias
+[ -f ~/.ps_alias ] && source ~/.ps_alias
