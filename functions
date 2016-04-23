@@ -7,17 +7,12 @@ mkd() { mkdir $@; cd $@; }
 cdl() { cd "$@" && ls; }
 
 docks() {
-    case $1 in
-        "up")
-            machine=${2-default}
-            docker-machine up $machine
-            echo "Docker machine started"
-            eval `docker-machine env $machine`
-            echo "Environment configured"
-            ;;
-        *)
-            echo "Usage: docks [up] args"
-            ;;
-    esac
-    exit 0
+    machine=${1:-default}
+    state=$(docker-machine status ${machine})
+    if [ ${state} != "Running" ]; then
+        echo "Docker machine ${machine} is not running.  Starting..."
+        docker-machine start ${machine} 2>&1 > /dev/null
+    fi
+    echo "Configuring shell to use docker machine ${machine}..."
+    eval `docker-machine env ${machine}`
 }
