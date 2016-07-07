@@ -1,3 +1,4 @@
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="/usr/local/src/elixir/bin:$PATH"
 export PATH="$(pwd):$PATH"
+[ -d /usr/texbin ] && export PATH=/usr/texbin:$PATH

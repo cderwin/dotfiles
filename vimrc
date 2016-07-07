@@ -13,6 +13,9 @@ Plugin 'othree/yajs.vim'
 Plugin 'othree/es.next.syntax.vim'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'hdima/python-syntax'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'posva/vim-vue'
+Plugin 'digitaltoad/vim-pug'
 call vundle#end()            " required
 filetype plugin indent on " Fix this shit
 
@@ -76,6 +79,9 @@ set notimeout ttimeout ttimeoutlen=200
 let mapleader=","
 let maplocalleader="\\"
 
+" Color Scheme
+colorscheme anotherdark
+
 " Indentation
 set shiftwidth=4
 set softtabstop=4
@@ -138,3 +144,6 @@ nnoremap <Leader>b :tabe term://.//bash<cr>
 if has('nvim')
     tnoremap <Esc> <C-\><C-n>
 endif
+
+" Highlight trailing whitespace
+highlight ExtraWhitespace ctermbg=darkgreen guibg=lightgreen

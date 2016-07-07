@@ -2,7 +2,6 @@
 coverage
 Gemfile.lock
 pkg/*
-vendor/*
 .tags
 .*.swp
 [._]*.s[a-w][a-z]
