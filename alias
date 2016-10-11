@@ -51,7 +51,9 @@ alias fig=docker-compose
 alias dm=docker-machine
 
 # Execute locallly installed npm binaries
-alias npm-exec="PATH=$(npm bin):$PATH"
+if hash npm 2>/dev/null; then
+    which npm > /dev/null && alias npm-exec="PATH=$(npm bin):$PATH"
+fi
 
 # Source ~/.ps_alias (aliases for predictive science)
 [ -f ~/.ps_alias ] && source ~/.ps_alias
