@@ -1,7 +1,7 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 if ! which git; then
-    echo "Git is not installed; vundle depends on git.  If you believe it is already installed, make sure its executable is installed on the path"
+    echo "Git is not installed; vundle depends on git.  If you believe it is already installed, make sure its executable is installed on your path"
     exit 1
 fi
 
