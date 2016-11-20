@@ -55,5 +55,5 @@ if hash npm 2>/dev/null; then
     which npm > /dev/null && alias npm-exec="PATH=$(npm bin):$PATH"
 fi
 
-# Source ~/.ps_alias (aliases for predictive science)
-[ -f ~/.ps_alias ] && source ~/.ps_alias
+# Use nvim instead of vim
+[ `which nvim` ] && alias vim=nvim
