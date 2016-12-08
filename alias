@@ -26,7 +26,8 @@ alias push="git push"
 alias pull="git pull"
 
 # Trim newlines and copy to clipboard
-alias c="tr -d '\n' | pbcopy"
+[ `which pbcopy` ] && alias copy="tr -d '\n' | pbcopy"
+[ `which xsel` ] && alias copy="tr -d '\n' | xsel -i -b"
 
 # Remove .DS_Store files
 alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
