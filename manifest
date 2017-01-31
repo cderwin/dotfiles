@@ -2,6 +2,7 @@ alias
 bash_profile
 bash_prompt
 bashrc
+bin
 exports
 functions
 gitconfig
