@@ -1,11 +1,11 @@
 #!/bin/bash
 # Source the other important files (and add to this as the repo grows)
 # We want the functionality included by these files here
-source $HOME/.alias
-source $HOME/.functions
-source $HOME/.exports
-source $HOME/.path
-source $HOME/.bash_prompt
+source $HOME/.bash/alias
+source $HOME/.bash/functions
+source $HOME/.bash/exports
+source $HOME/.bash/path
+source $HOME/.bash/prompt
 
 # We want to import this and be able to override it
 source $HOME/.profile
@@ -22,4 +22,4 @@ source $HOME/.profile
 [ -f $HOME/.git-completion.bash ] && source $HOME/.git-completion.bash
 
 # Local configs should override everything
-source $HOME/.localrc
+source $HOME/.bash/localrc

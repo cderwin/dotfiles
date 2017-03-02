@@ -1,7 +1,15 @@
-#Simple makefile: just copies files to $HOME and reloads shell
+NOINSTALL_DIRS := install/
+PACKAGES := $(filter-out $(NOINSTALL_DIRS),$(wildcard */))
 
-files := $(shell find . -not -path "./.git/*" -not -name ".git" -path "./*")
+.PHONY: install uninstall update pull
 
-all: $(files)
-	set -- -f && \
-	source bootstrap.sh
+install:
+	stow -t ~ $(PACKAGES)
+
+uninstall:
+	stow -Dt ~ $(PACKAGES)
+
+pull:
+	git pull
+
+update: pull install
