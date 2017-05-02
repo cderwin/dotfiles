@@ -13,3 +13,4 @@ add_to_path /usr/local/go/bin
 
 # Local paths
 add_to_path $HOME/bin
+add_to_path $HOME/pfx/bin
