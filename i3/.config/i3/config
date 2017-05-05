@@ -43,15 +43,23 @@ assign [class="^Vlc$"] $workspace4
 assign [class="^qBittorrent$"] $workspace5
 assign [class="^Evince$"] $workspace6
 
-for_window [class="^Spotify$"] move to $workspace3
+for_window [class="Spotify"] move to workspace $workspace3
 
 gaps inner 30
 gaps outer 25
 
 new_window none
 
+# Custom Bindings
+
 bindsym $mod+d exec rofi -show run -lines 5 -width 100 -padding 300 -opacity "85" -fullscreen -font "Roboto 35" -separator-style "none"
 
+bindsym $mod+z workspace back_and_forth
+bindsym $mod+bracketleft workspace prev
+bindsym $mod+bracketright workspace next
+bindsym $mod+slash workspace $workspace1
+
+bindsym $mod+Return exec ~/pfx/bin/alacritty
 
 set $mod Mod4
 
@@ -72,9 +80,6 @@ font pango:monospace 16
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
-
-# start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
 bindsym $mod+q kill
@@ -200,8 +205,8 @@ bindsym $mod+r mode "resize"
 # }
 
 # media keys
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-cink-colume 0 +5%
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-cink-colume 0 -5%
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
 
 bindsym XF86MonBrightnessUp exec xbacklight -inc 20

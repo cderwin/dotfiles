@@ -16,3 +16,10 @@ docks() {
     echo "Configuring shell to use docker machine ${machine}..."
     eval `docker-machine env ${machine}`
 }
+
+
+archclone() {
+    target=$HOME/source/$1
+    git clone https://aur.archlinux.org/$1.git $target
+    cd $target
+}
