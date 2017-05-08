@@ -8,7 +8,7 @@ source $HOME/.bash/path
 source $HOME/.bash/prompt
 
 # We want to import this and be able to override it
-source $HOME/.profile
+[ -f $HOME/.profile ] && source $HOME/.profile
 
 # This files commands go here
 

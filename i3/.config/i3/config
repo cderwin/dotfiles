@@ -29,6 +29,7 @@ set $workspace10 "10"
 exec --no-startup-id polybar example
 exec --no-startup-id xflux -z 75081
 exec --no-startup-id compton
+exec --no-startup-id xss-lock -- ~/.bin/lock.sh
 exec_always --no-startup-id feh --bg-fill ~/.wallpapers/current
 
 exec ~/pfx/bin/alacritty
@@ -60,6 +61,7 @@ bindsym $mod+bracketright workspace next
 bindsym $mod+slash workspace $workspace1
 
 bindsym $mod+Return exec ~/pfx/bin/alacritty
+bindsym $mod+Shift+s exec sudo systemctl suspend
 
 set $mod Mod4
 
