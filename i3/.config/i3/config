@@ -29,22 +29,24 @@ set $workspace10 "10"
 exec --no-startup-id polybar example
 exec --no-startup-id xflux -z 75081
 exec --no-startup-id compton
-exec --no-startup-id xss-lock -- ~/.bin/lock.sh
+exec --no-startup-id bash -c "killall xss-lock; xss-lock -- ~/.bin/lock.sh"
 exec_always --no-startup-id feh --bg-fill ~/.wallpapers/current
 
 exec ~/pfx/bin/alacritty
 exec firefox
 exec spotify
 exec vlc-wrapper
-exec qbittorrent
+exec discord
+exec evince
 
 # Assign workspaces
 assign [class="^Firefox$"] $workspace2
 assign [class="^Vlc$"] $workspace4
 assign [class="^qBittorrent$"] $workspace5
-assign [class="^Evince$"] $workspace6
+assign [class="^Evince$"] $workspace7
 
 for_window [class="Spotify"] move to workspace $workspace3
+for_window [class="discord"] move to workspace $workspace6
 
 gaps inner 30
 gaps outer 25
