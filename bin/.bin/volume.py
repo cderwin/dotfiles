@@ -16,7 +16,24 @@ def get_volumes(sinks):
     return None
 
 
+def get_muted(sinks):
+    for line in sinks.split('\n'):
+        if line.strip().startswith('Mute:'):
+            mute = line.strip().split(':')[1].strip()
+            if mute == 'yes':
+                return True
+            
+            if mute == 'no':
+                return False
+
+    return None
+
+
 if __name__ == '__main__':
     pactl_output = get_sinks()
     (left_volume, right_volume) = get_volumes(pactl_output)
-    print(f'{int((left_volume + right_volume)/2)}%')
+    output = f'{int((left_volume + right_volume)/2)}%'
+    if get_muted(pactl_output):
+        print(f'({output})')
+    else:
+        print(output)
