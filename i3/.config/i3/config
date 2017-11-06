@@ -29,24 +29,23 @@ set $workspace10 "10"
 exec --no-startup-id polybar example
 exec --no-startup-id xflux -z 75081
 exec --no-startup-id compton
-exec --no-startup-id bash -c "killall xss-lock; xss-lock -- ~/.bin/lock.sh"
 exec_always --no-startup-id feh --bg-fill ~/.wallpapers/current
 
 exec ~/pfx/bin/alacritty
-exec firefox
+exec vivaldi-snapshot
 exec spotify
 exec vlc-wrapper
-exec discord
+exec discord-canary
 exec evince
 
 # Assign workspaces
-assign [class="^Firefox$"] $workspace2
+assign [class="^Vivaldi-snapshot$"] $workspace2
 assign [class="^Vlc$"] $workspace4
 assign [class="^qBittorrent$"] $workspace5
-assign [class="^Evince$"] $workspace7
 
 for_window [class="Spotify"] move to workspace $workspace3
 for_window [class="discord"] move to workspace $workspace6
+for_window [class="^Evince$"] move to workspace $workspace7
 
 gaps inner 30
 gaps outer 25
@@ -56,6 +55,9 @@ new_window none
 # Custom Bindings
 
 bindsym $mod+d exec rofi -show run -lines 5 -width 100 -padding 300 -opacity "85" -fullscreen -font "Roboto 35" -separator-style "none"
+bindsym $mod+p exec passmenu
+bindsym $mod+x exec maim -s > /tmp/scrot.png
+bindsym $mod+Shift+x exec maim > /tmp/scrot.png
 
 bindsym $mod+z workspace back_and_forth
 bindsym $mod+bracketleft workspace prev
@@ -164,7 +166,6 @@ bindsym $mod+Shift+4 move container to workspace 4
 bindsym $mod+Shift+5 move container to workspace 5
 bindsym $mod+Shift+6 move container to workspace 6
 bindsym $mod+Shift+7 move container to workspace 7
-
 bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
@@ -213,8 +214,8 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
 
-bindsym XF86MonBrightnessUp exec xbacklight -inc 20
-bindsym XF86MonBrightnessDown exec xbacklight -dec 20
+bindsym XF86MonBrightnessUp exec xbacklight -inc 5
+bindsym XF86MonBrightnessDown exec xbacklight -dec 5
 
 bindsym XF86KbdBrightnessUp exec bash -c "sudo python3 ~/.bin/kbdlight.py increment 20"
 bindsym XF86KbdBrightnessDown exec bash -c "sudo python3 ~/.bin/kbdlight.py decrement 20"
