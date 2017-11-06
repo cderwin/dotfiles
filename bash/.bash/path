@@ -7,6 +7,7 @@ add_to_path() {
 # Language installs
 add_to_path $HOME/.cargo/bin
 add_to_path $HOME/.rbenv/bin
+add_to_path $HOME/.local/bin
 add_to_path /usr/local/src/elixir/bin
 add_to_path /usr/texbin
 add_to_path /usr/local/go/bin
@@ -14,3 +15,5 @@ add_to_path /usr/local/go/bin
 # Local paths
 add_to_path $HOME/bin
 add_to_path $HOME/pfx/bin
+add_to_path $HOME/source/nim-lang/nim-0.17.0/bin
+add_to_path $HOME/.nimble/bin
