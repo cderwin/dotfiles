@@ -19,6 +19,7 @@ Plugin 'othree/es.next.syntax.vim'
 Plugin 'hdima/python-syntax'
 Plugin 'posva/vim-vue'
 Plugin 'digitaltoad/vim-pug'
+Plugin 'zah/nim.vim'
 call vundle#end()            " required
 filetype plugin indent on " Fix this shit
 
@@ -71,8 +72,9 @@ set cmdheight=2
 " Display line numbers on the left
 set number
 
-" Quickly time out on keycodes, but never time out on mappings
-set notimeout ttimeout ttimeoutlen=200
+
+" Set mouse on in all modes
+set mouse=a
 
 "------------------------------------------------------------
 " Begin Custom Commands
@@ -93,6 +95,10 @@ set shiftround
 set expandtab
 set autoindent
 set smarttab
+
+" File-specific indentation
+autocmd Filetype css setlocal tabstop=2 shiftwidth=2
+autocmd Filetype js setlocal tabstop=2 shiftwidth=2
 
 " Map Y to act like D and C, i.e. to yank until EOL, rather than act as yy,
 " which is the default
