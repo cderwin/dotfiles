@@ -7,10 +7,11 @@ source $HOME/.bash/exports
 source $HOME/.bash/path
 source $HOME/.bash/prompt
 
-# We want to import this and be able to override it
-[ -f $HOME/.profile ] && source $HOME/.profile
-
 # This files commands go here
+
+# Initialize nvm
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Initialize rbenv
 [ -d $HOME/.rbenv ] && eval "$(rbenv init -)"
