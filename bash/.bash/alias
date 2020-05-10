@@ -40,7 +40,6 @@ alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo 
 
 # Concat multiple ssh configs
 alias ssh-configure="cat ~/.ssh/cfg/* > ~/.ssh/config"
-alias ssh="ssh-configure && ssh"
 
 # git aliases
 alias gs="git status"
