@@ -1,0 +1,12 @@
+.gitconfig
+.gitignore
+.hushlogin
+.inputrc
+.screenrc
+.tmux.conf
+.bash_profile
+.bashrc
+.bash/*
+.config/nvim/init.vim
+.vim/init.vim
+.vimrc
