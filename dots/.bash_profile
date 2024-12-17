@@ -3,7 +3,6 @@
 # We want the functionality included by these files here
 source $HOME/.bash/alias
 source $HOME/.bash/functions
-source $HOME/.bash/exports
 source $HOME/.bash/path
 source $HOME/.bash/prompt
 
