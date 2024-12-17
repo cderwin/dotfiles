@@ -46,14 +46,5 @@ alias gs="git status"
 alias gd="git diff"
 alias gb="git branch"
 
-# docker aliases
-alias fig=docker-compose
-alias dm=docker-machine
-
-# Execute locallly installed npm binaries
-if hash npm 2>/dev/null; then
-    which npm > /dev/null && alias npm-exec="PATH=$(npm bin):$PATH"
-fi
-
 # Use nvim instead of vim
 [ `which nvim` ] && alias vim=nvim

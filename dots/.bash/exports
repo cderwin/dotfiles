@@ -1,5 +1,0 @@
-#!/bin/bash
-# Environment variables other than $PATH (set in .path)
-
-export EDITOR=vim
-[-d "$HOME/.nvm" ] && export NVM_DIR="$HOME/.nvm"
