@@ -6,7 +6,8 @@
 .tmux.conf
 .bash_profile
 .bashrc
-.bash/*
-.config/nvim/init.vim
-.vim/init.vim
+.bash/alias
+.bash/functions
+.bash/path
+.bash/prompt
 .vimrc
