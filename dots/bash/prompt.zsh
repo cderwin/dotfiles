@@ -57,7 +57,14 @@ fi;
 autoload -Uz vcs_info
 precmd() {
     vcs_info
+    if [[ -n $vcs_info_msg_0_ ]]; then
+        psvar[1]="$vcs_info_msg_0_";
+    else
+        psvar[1]=""
+    fi
 }
+
+zstyle ':vcs_info:git:*' formats '%b'
 
 # set prompt
 PROMPT=$'\n'; # start with newline
@@ -66,7 +73,7 @@ PROMPT+="%{${white}%} at ";
 PROMPT+="%{${hostStyle}%}%m"; # host
 PROMPT+="%{${white}%} in ";
 PROMPT+="%{${green}%}%~"; # working directory
-PROMPT+="%{${white}%} on %{${violet}%}${vcs_info_msg_0_}"; # Git repository details
+PROMPT+="%(1V.%{${white}%} on %{${violet}%}%1v.)"; # Git repository details
 PROMPT+=$'\n';
 PROMPT+="%{${white}%}\$ %{${reset}%}"; # `$` (and reset color)
 export PROMPT;
