@@ -9,5 +9,7 @@
 .bash/alias
 .bash/functions
 .bash/path
-.bash/prompt
+.bash/prompt.bash
+.bash/prompt.zsh
 .vimrc
+.zshrc
