@@ -4,7 +4,7 @@
 source $HOME/.bash/alias
 source $HOME/.bash/functions
 source $HOME/.bash/path
-source $HOME/.bash/prompt
+source $HOME/.bash/prompt.bash
 
 # This files commands go here
 

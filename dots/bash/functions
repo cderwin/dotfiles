@@ -1,5 +1,4 @@
-#!/bin/bash
-# Custom bash functions
+# Custom shell functions
 
 mkd() { mkdir $@; cd $@; }
 cdl() { cd "$@" && ls; }
