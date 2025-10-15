@@ -1,4 +1,0 @@
-# Custom shell functions
-
-mkd() { mkdir $@; cd $@; }
-cdl() { cd "$@" && ls; }

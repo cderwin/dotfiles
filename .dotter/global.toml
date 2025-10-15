@@ -1,0 +1,26 @@
+[helpers]
+
+[base.files]
+"base/gitconfig" = "~/.gitconfig"
+"base/gitignore" = "~/.gitignore"
+"base/inputrc" = "~/.inputrc"
+"base/tmux.conf" = "~/.tmux.conf"
+"base/wezterm.lua" = "~/.config/wezterm/wezterm.lua"
+
+[zsh.files]
+"sh/rc" = "~/.zshrc"
+"sh/profile" = "~/.zshprofile"
+"sh/prompt.zsh" = "~/.prompt.zsh"
+
+[nvim.files]
+nvim = "~/.config/nvim"
+
+[i3.files]
+"archlinux/bin" = "~/.bin"
+"archlinux/i3.config" = "~/.config/i3/config"
+"archlinux/wallpapers" = "~/.wallpapers"
+"archlinux/web" = "~/.config/web"
+"archlinux/xinitrc" = "~/.xinitrc"
+
+[settings]
+default_target_type = "automatic"

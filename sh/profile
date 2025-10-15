@@ -1,0 +1,5 @@
+# Enable completion for non-system bash
+[ -f $HOME/.git-completion.bash ] && source $HOME/.git-completion.bash
+
+# environment variables
+export EDITOR=vim
