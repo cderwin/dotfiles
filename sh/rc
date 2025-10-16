@@ -1,7 +1,4 @@
 {{#if dotter.packages.zsh}}
-# Local zshrc
-[ -f ~/.zshrc.local ] && . ~/.zshrc.local
-
 # initialize zsh completions
 autoload -Uz compinit && compinit
 
@@ -17,7 +14,6 @@ bindkey "^[[B" down-line-or-beginning-search # Down
 if [[ -d "${ASDF_DIR}" ]]; then
     fpath=(${ASDF_DIR}/completions $fpath)
 fi
-
 {{/if}}
 
 # Move up quickly
@@ -47,6 +43,12 @@ alias gs="git status"
 alias gd="git diff"
 alias gb="git branch"
 
+# pal aliases
+alias h="./hatchw"
+alias hr="./hatchw run"
+alias g="./gradlew"
+alias tsync="rsync -e 'tsh ssh'"
+
 # Trim newlines and copy to clipboard
 which pbcopy &> /dev/null && alias copy="tr -d '\n' | pbcopy"
 which xsel   &> /dev/null && alias copy="tr -d '\n' | xsel -i -b"
@@ -75,5 +77,10 @@ add_to_path /usr/local/go/bin
 add_to_path $HOME/.cargo/bin
 add_to_path $HOME/.local/bin
 
+{{#if dotter.packages.zsh}}
 # source prompt
 . ~/.prompt.zsh
+
+# Local zshrc
+[ -f ~/.zshrc.local ] && . ~/.zshrc.local
+{{/if}}

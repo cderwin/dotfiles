@@ -21,3 +21,6 @@ vim.opt.cmdheight = 2
 vim.opt.incsearch = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
+
+-- lsp settings
+vim.diagnostic.config({ virtual_text = false, virtual_lines = { current_line = true }, })
