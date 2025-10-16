@@ -1,16 +1,16 @@
 [user]
-	name = Cameron Derwin
-	email = {{git_email}}
+    name = Cameron Derwin
+    email = {{git_email}}
 {{#if git_signing_key}}
     signingkey = {{git_signing_key}}
 {{/if}}
 [core]
-	editor = vim
-	excludesFile = ~/.gitignore
+    editor = vim
+    excludesFile = ~/.gitignore
 [color]
-	ui = true
+    ui = true
 [push]
-	default = simple
+    default = simple
 [alias]
     co = checkout
     cob = checkout -b
