@@ -1,5 +1,9 @@
 [helpers]
 
+[base.variables]
+git_email = "camderwin@gmail.com"
+git_signing_key = ""
+
 [base.files]
 "base/gitconfig" = "~/.gitconfig"
 "base/gitignore" = "~/.gitignore"

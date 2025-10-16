@@ -1,6 +1,9 @@
 [user]
 	name = Cameron Derwin
-	email = camderwin@gmail.com
+	email = {{git_email}}
+{{#if git_signing_key}}
+    signingkey = {{git_signing_key}}
+{{/if}}
 [core]
 	editor = vim
 	excludesFile = ~/.gitignore
@@ -25,3 +28,17 @@
     complexity = 10
     strict = True
     lazy = True
+{{#if git_signing_key}}
+[commit]
+    gpgsign = true
+[tag]
+    gpgsign = true
+    forceSignAnnotated = true
+{{/if}}
+[filter "lfs"]
+    required = true
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+[pull]
+    rebase = false

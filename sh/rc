@@ -1,8 +1,24 @@
+{{#if dotter.packages.zsh}}
 # Local zshrc
 [ -f ~/.zshrc.local ] && . ~/.zshrc.local
 
 # initialize zsh completions
 autoload -Uz compinit && compinit
+
+# use prefix-matching search for history scrolling
+autoload -U up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey "^[[A" up-line-or-beginning-search # Up
+bindkey "^[[B" down-line-or-beginning-search # Down
+
+# append completions to fpath
+if [[ -d "${ASDF_DIR}" ]]; then
+    fpath=(${ASDF_DIR}/completions $fpath)
+fi
+
+{{/if}}
 
 # Move up quickly
 alias ..="cd .."
@@ -53,13 +69,11 @@ add_to_path() {
     fi
 }
 
-add_to_path $HOME/.cargo/bin
-add_to_path $HOME/.rbenv/bin
-add_to_path $HOME/.nimble/bin
-add_to_path $HOME/.local/bin
 add_to_path /usr/local/src/elixir/bin
 add_to_path /usr/texbin
 add_to_path /usr/local/go/bin
+add_to_path $HOME/.cargo/bin
+add_to_path $HOME/.local/bin
 
 # source prompt
 . ~/.prompt.zsh
