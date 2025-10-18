@@ -13,7 +13,13 @@ In general, the following tools are assumed to be installed:
 - fd
 - fzf
 - rg
+- bat
 - nvim
 - git
 - uv
+- nushell
+- zoxide
+- atuin
+- broot
+- starship
 ```
