@@ -16,6 +16,9 @@ git_signing_key = ""
 "sh/profile" = "~/.zshprofile"
 "sh/prompt.zsh" = "~/.prompt.zsh"
 
+[nushell.files]
+nushell = "~/.config/nushell"
+
 [nvim.files]
 nvim = "~/.config/nvim"
 
