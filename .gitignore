@@ -5,3 +5,4 @@ build/
 .dotter/local.toml
 .dotter/cache.toml
 .dotter/cache
+bin/
