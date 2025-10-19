@@ -20,8 +20,10 @@
 $env.config.buffer_editor = "nvim"
 
 use std "path add"
+path add /usr/local/bin
 path add /opt/homebrew/bin
 path add ~/.local/bin
+path add ~/.cargo/bin
 
 def l [] { ls | grid -s " " }
 alias ll = ls -l
@@ -111,5 +113,3 @@ alias pgh = project github
 alias pci = project circle
 alias po = project open
 alias nb = notebook
-
-source ~/.zoxide.nu
