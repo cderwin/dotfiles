@@ -20,6 +20,7 @@
 $env.config.buffer_editor = "nvim"
 
 use std "path add"
+path add ~/.cargo/bin
 path add /opt/homebrew/bin
 path add ~/.local/bin
 
