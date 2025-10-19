@@ -1,7 +1,4 @@
-vim/.vim/bundle
-vim/.vim/.netrwhist
-!vim/.vim/bundle/Vundle.vim/
-build/
+nvim/lazy-lock.json
 .dotter/local.toml
 .dotter/cache.toml
 .dotter/cache
