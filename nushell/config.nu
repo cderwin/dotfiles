@@ -28,6 +28,8 @@ path add ~/.cargo/bin
 def l [] { ls | grid -s " " }
 alias ll = ls -l
 
+alias v = nvim
+
 alias g = git
 alias gs = git status
 alias gd = git diff
