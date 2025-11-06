@@ -8,7 +8,7 @@ config.font_size = 12
 config.default_prog = { "/Users/cderwin/.cargo/bin/nu" }
 config.set_environment_variables = {
     XDG_CONFIG_HOME = "/Users/cderwin/.config",
-    XDG_DATA_DIR = "/Users/cderwin/.lcal/share",
+    XDG_DATA_HOME = "/Users/cderwin/.config",
 }
 
 config.leader = { key = '`' }

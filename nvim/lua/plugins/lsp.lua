@@ -10,6 +10,8 @@ return {
             ensure_installed = {
                 "basedpyright",
                 "ruff",
+                "rust_analyzer",
+                "gopls",
             },
         })
     end

@@ -27,6 +27,7 @@ path add ~/.cargo/bin
 
 def l [] { ls | grid -s " " }
 alias ll = ls -l
+alias v = nvim
 
 alias v = nvim
 
