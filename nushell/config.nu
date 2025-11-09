@@ -24,12 +24,12 @@ path add /usr/local/bin
 path add /opt/homebrew/bin
 path add ~/.local/bin
 path add ~/.cargo/bin
+path add /usr/local/go/bin
 
 def l [] { ls | grid -s " " }
 alias ll = ls -l
 alias v = nvim
-
-alias v = nvim
+alias j = just
 
 alias g = git
 alias gs = git status
