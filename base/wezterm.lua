@@ -5,10 +5,11 @@ local config = wezterm.config_builder()
 config.color_scheme = "ForestBlue"
 config.font_size = 12
 
-config.default_prog = { "/Users/cderwin/.cargo/bin/nu" }
+local home = os.getenv("HOME")
+config.default_prog = { string.format("%s/.cargo/bin/nu", home) }
 config.set_environment_variables = {
-    XDG_CONFIG_HOME = "/Users/cderwin/.config",
-    XDG_DATA_HOME = "/Users/cderwin/.config",
+    XDG_CONFIG_HOME = string.format("%s/.config", home),
+    XDG_DATA_HOME = string.format("%s/.config", home),
 }
 
 config.leader = { key = '`' }

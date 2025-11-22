@@ -17,7 +17,6 @@
 # options using:
 #     config nu --doc | nu-highlight | less -R
 
-$env.config.buffer_editor = "nvim"
 
 use std "path add"
 path add /usr/local/bin
@@ -26,10 +25,23 @@ path add ~/.local/bin
 path add ~/.cargo/bin
 path add /usr/local/go/bin
 
+# nushell settings
+$env.config.history.file_format = "sqlite"
+$env.config.show_banner = false
+$env.config.buffer_editor = "nvim"
+
 def l [] { ls | grid -s " " }
 alias ll = ls -l
-alias v = nvim
 alias j = just
+alias fg = job unfreeze
+
+def v --wrapped [...args] {
+    if ($args | length) == 0 {
+        nvim (fzf)
+    } else {
+        nvim ...$args
+    }
+}
 
 alias g = git
 alias gs = git status
@@ -58,6 +70,10 @@ def --env --wrapped hatchw [...args] {
         }
     }
 }
+
+alias h = hatchw
+alias hr = hatchw run
+alias gw = gradlew
 
 def notebook [--detach(-d)] {
     if $detach {
