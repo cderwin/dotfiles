@@ -80,4 +80,8 @@ install-utils: install-rustup
 install-shellrice: install-rustup
     cargo binstall zoxide atuin broot starship
 
+# instant launch distribution of binaries
+il-dist:
+    docker build --platform linux/amd64 instant-launch -t il-dotfiles-builder
+    docker run --rm --platform linux/amd64 -v ./build:/build il-dotfiles-builder
 

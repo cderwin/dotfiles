@@ -3,3 +3,5 @@ nvim/lazy-lock.json
 .dotter/cache.toml
 .dotter/cache
 bin/
+build/
+instant-launch/palantir-ca-bundle.crt
