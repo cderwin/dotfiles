@@ -27,8 +27,10 @@ path add /usr/local/go/bin
 
 # nushell settings
 $env.config.history.file_format = "sqlite"
+$env.config.history.isolation = true
 $env.config.show_banner = false
 $env.config.buffer_editor = "nvim"
+$env.config.edit_mode = "vi"
 
 def l [] { ls | grid -s " " }
 alias ll = ls -l
