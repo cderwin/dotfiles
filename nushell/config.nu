@@ -31,6 +31,9 @@ $env.config.history.isolation = true
 $env.config.show_banner = false
 $env.config.buffer_editor = "nvim"
 $env.config.edit_mode = "vi"
+$env.NU_LIB_DIRS = $env.NU_LIB_DIRS | append ($nu.default-config-dir | path join "lib")
+let NU_LIB_DIRS = [ ($nu.default-config-dir | path join "lib") ]
+
 
 def l [] { ls | grid -s " " }
 alias ll = ls -l
