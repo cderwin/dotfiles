@@ -1,0 +1,730 @@
+fields:
+  - api_name: "elevation"
+    display_name: "Elev"
+  - api_name: "air_temp"
+    display_name: "Temp"
+  - api_name: "relative_humidity"
+    display_name: "RH"
+  - api_name: "dew_point_temperature"
+    display_name: "DewP"
+  - api_name: "wind_speed"
+    display_name: "Spd"
+  - api_name: "wind_speed_min"
+    display_name: "Min"
+  - api_name: "wind_gust"
+    display_name: "Gust"
+  - api_name: "wind_direction"
+    display_name: "Dir"
+  - api_name: "precip_accum_one_hour"
+    display_name: "Pcp1"
+  - api_name: "precip_accum_24hr"
+    display_name: "Pcp24"
+  - api_name: "precip_cumsum"
+    display_name: "PcpSum"
+  - api_name: "precip_accum"
+    display_name: "PcpAc"
+  - api_name: "snow_water_equiv_24hr"
+    display_name: "SWE24"
+  - api_name: "snow_water_equiv"
+    display_name: "SWE"
+  - api_name: "snow_depth_24hr"
+    display_name: "SnoHt24"
+  - api_name: "snow_depth_24h"
+    display_name: "24Sno"
+  - api_name: "snow_depth"
+    display_name: "SnoHt"
+  - api_name: "intermittent_snow"
+    display_name: "I/S_Sno"
+  - api_name: "pressure"
+    display_name: "Pres"
+  - api_name: "equip_temperature"
+    display_name: "EqTemp"
+
+weather_stations:
+  - name: "alpental"
+    columns:
+      - stid: 3
+        field: "air_temp"
+      - stid: 2
+        field: "air_temp"
+      - stid: 1
+        field: "air_temp"
+      - stid: 3
+        field: "relative_humidity"
+      - stid: 1
+        field: "relative_humidity"
+      - stid: 3
+        field: "wind_speed"
+      - stid: 3
+        field: "wind_gust"
+      - stid: 3
+        field: "wind_direction"
+      - stid: 1
+        field: "precip_accum_one_hour"
+      # - stid: 1
+      #   field: "precip_cumsum"
+      - stid: 1
+        field: "snow_depth_24h"
+      - stid: 1
+        field: "snow_depth"
+      - stid: 2
+        field: "snow_depth_24h"
+      - stid: 2
+        field: "snow_depth"
+      - stid: 3
+        field: "intermittent_snow"
+
+  - name: "berne"
+    columns:
+      - stid: 12
+        field: "air_temp"
+      - stid: 12
+        field: "relative_humidity"
+      - stid: 12
+        field: "precip_accum_one_hour"
+      - stid: 12
+        field: "precip_cumsum"
+      - stid: 12
+        field: "snow_depth_24h"
+      - stid: 12
+        field: "snow_depth"
+      - stid: 12
+        field: "pressure"
+
+  - name: "blewett-pass"
+    columns:
+      - stid: 48
+        field: "air_temp"
+      - stid: 48
+        field: "relative_humidity"
+      - stid: 48
+        field: "precip_accum_one_hour"
+      - stid: 48
+        field: "precip_cumsum"
+      - stid: 48
+        field: "snow_depth_24h"
+      - stid: 48
+        field: "snow_depth"
+      - stid: 48
+        field: "pressure"
+      - stid: 48
+        field: "equip_temperature"
+
+  - name: "muir"
+    columns:
+      - stid: 34
+        field: "air_temp"
+      - stid: 34
+        field: "relative_humidity"
+      - stid: 34
+        field: "wind_speed_min"
+      - stid: 34
+        field: "wind_speed"
+      - stid: 34
+        field: "wind_gust"
+      - stid: 34
+        field: "wind_direction"
+      - stid: 34
+        field: "solar_radiation"
+
+  - name: "chinook-pass"
+    columns:
+      - stid: 32
+        field: "air_temp"
+      - stid: 33
+        field: "air_temp"
+      - stid: 32
+        field: "relative_humidity"
+      - stid: 33
+        field: "relative_humidity"
+      - stid: 32
+        field: "wind_speed"
+      - stid: 32
+        field: "wind_gust"
+      - stid: 32
+        field: "wind_direction"
+      - stid: 33
+        field: "precip_accum_one_hour"
+      - stid: 33
+        field: "precip_cumsum"
+      - stid: 33
+        field: "snow_depth"
+      - stid: 33
+        field: "equip_temperature"
+
+  - name: "crystal-base"
+    columns:
+      - stid: 29
+        field: "air_temp"
+      - stid: 28
+        field: "air_temp"
+      - stid: 29
+        field: "relative_humidity"
+      - stid: 28
+        field: "relative_humidity"
+      - stid: 29
+        field: "wind_speed_min"
+      - stid: 29
+        field: "wind_speed"
+      - stid: 29
+        field: "wind_gust"
+      - stid: 29
+        field: "wind_direction"
+      - stid: 28
+        field: "precip_accum_one_hour"
+      - stid: 28
+        field: "precip_cumsum"
+      - stid: 28
+        field: "snow_depth_24h"
+      - stid: 28
+        field: "snow_depth"
+
+  - name: "crystal" # corresponds to Campbell Basin/Green Valley
+    columns:
+      - stid: 27
+        field: "air_temp"
+      - stid: 54
+        field: "air_temp"
+      - stid: 27
+        field: "relative_humidity"
+      - stid: 27
+        field: "snow_depth_24h"
+      - stid: 27
+        field: "snow_depth"
+      - stid: 54
+        field: "snow_depth_24h"
+      - stid: 54
+        field: "snow_depth"
+
+  - name: "dirtyface"
+    columns:
+      - stid: 10
+        field: "air_temp"
+      - stid: 10
+        field: "relative_humidity"
+      - stid: 10
+        field: "wind_speed_min"
+      - stid: 10
+        field: "wind_speed"
+      - stid: 10
+        field: "wind_gust"
+      - stid: 10
+        field: "wind_direction"
+
+  - name: "hurricane-ridge"
+    columns:
+      - stid: 4
+        field: "air_temp"
+      - stid: 4
+        field: "relative_humidity"
+      - stid: 4
+        field: "wind_speed_min"
+      - stid: 4
+        field: "wind_speed"
+      - stid: 4
+        field: "wind_gust"
+      - stid: 4
+        field: "wind_direction"
+      - stid: 4
+        field: "precip_accum_one_hour"
+      - stid: 4
+        field: "precip_cumsum"
+      - stid: 4
+        field: "snow_depth"
+      - stid: 4
+        field: "solar_radiation"
+
+  - name: "lake-wenatchee"
+    columns:
+      - stid: 11
+        field: "air_temp"
+      - stid: 11
+        field: "relative_humidity"
+      - stid: 11
+        field: "precip_accum_one_hour"
+      - stid: 11
+        field: "precip_cumsum"
+      - stid: 11
+        field: "snow_depth_24h"
+      - stid: 11
+        field: "snow_depth"
+
+  - name: "mazama"
+    columns:
+      - stid: 7
+        field: "air_temp"
+      - stid: 7
+        field: "relative_humidity"
+      - stid: 7
+        field: "wind_speed"
+      - stid: 7
+        field: "wind_gust"
+      - stid: 7
+        field: "wind_direction"
+      - stid: 7
+        field: "precip_accum_one_hour"
+      - stid: 7
+        field: "precip_cumsum"
+      - stid: 7
+        field: "snow_depth_24h"
+      - stid: 7
+        field: "snow_depth"
+      - stid: 7
+        field: "solar_radiation"
+
+  - name: "mission-ridge"
+    columns:
+      - stid: 25
+        field: "air_temp"
+      - stid: 26
+        field: "air_temp"
+      - stid: 24
+        field: "air_temp"
+      - stid: 25
+        field: "relative_humidity"
+      - stid: 26
+        field: "relative_humidity"
+      - stid: 25
+        field: "wind_speed_min"
+      - stid: 25
+        field: "wind_speed"
+      - stid: 25
+        field: "wind_gust"
+      - stid: 25
+        field: "wind_direction"
+      - stid: 26
+        field: "precip_accum_one_hour"
+      - stid: 26
+        field: "precip_cumsum"
+      - stid: 26
+        field: "snow_depth_24h"
+      - stid: 26
+        field: "snow_depth"
+
+  - name: "baker"
+    columns:
+      - stid: 6
+        field: "air_temp"
+      - stid: 5
+        field: "air_temp"
+      - stid: 6
+        field: "relative_humidity"
+      - stid: 5
+        field: "relative_humidity"
+      - stid: 6
+        field: "wind_speed_min"
+      - stid: 6
+        field: "wind_speed"
+      - stid: 6
+        field: "wind_gust"
+      - stid: 6
+        field: "wind_direction"
+      - stid: 5
+        field: "precip_accum_one_hour"
+      - stid: 5
+        field: "precip_cumsum"
+      - stid: 5
+        field: "snow_depth_24h"
+      - stid: 5
+        field: "snow_depth"
+      - stid: 6
+        field: "solar_radiation"
+
+  - name: "hood-meadows"
+    columns:
+      - stid: 42
+        field: "air_temp"
+      - stid: 43
+        field: "air_temp"
+      - stid: 42
+        field: "relative_humidity"
+      - stid: 43
+        field: "relative_humidity"
+      - stid: 42
+        field: "wind_speed_min"
+      - stid: 42
+        field: "wind_speed"
+      - stid: 42
+        field: "wind_gust"
+      - stid: 42
+        field: "wind_direction"
+      - stid: 43
+        field: "precip_accum_one_hour"
+      - stid: 43
+        field: "precip_cumsum"
+      - stid: 43
+        field: "snow_depth_24h"
+      - stid: 43
+        field: "snow_depth"
+      - stid: 43
+        field: "pressure"
+
+  - name: "hood-meadows-cascade"
+    columns:
+      - stid: 41
+        field: "air_temp"
+      - stid: 41
+        field: "relative_humidity"
+      - stid: 41
+        field: "wind_speed_min"
+      - stid: 41
+        field: "wind_speed"
+      - stid: 41
+        field: "wind_gust"
+      - stid: 41
+        field: "wind_direction"
+
+  - name: "mt-washington"
+    columns:
+      - stid: 20
+        field: "air_temp"
+      - stid: 20
+        field: "wind_direction"
+      - stid: 20
+        field: "relative_humidity"
+      - stid: 20
+        field: "solar_radiation"
+
+  - name: "st-helens"
+    columns:
+      - stid: 40
+        field: "air_temp"
+      - stid: 40
+        field: "relative_humidity"
+      - stid: 40
+        field: "wind_speed_min"
+      - stid: 40
+        field: "wind_speed"
+      - stid: 40
+        field: "wind_gust"
+      - stid: 40
+        field: "wind_direction"
+      - stid: 40
+        field: "precip_accum_one_hour"
+      - stid: 40
+        field: "precip_cumsum"
+
+  - name: "newhalem"
+    columns:
+      - stid: 59
+        field: "air_temp"
+      - stid: 59
+        field: "relative_humidity"
+      - stid: 59
+        field: "wind_speed_min"
+      - stid: 59
+        field: "wind_speed"
+      - stid: 59
+        field: "wind_gust"
+      - stid: 59
+        field: "wind_direction"
+      - stid: 59
+        field: "snow_depth"
+
+  - name: "paradise"
+    columns:
+      - stid: 35
+        field: "air_temp"
+      - stid: 35
+        field: "relative_humidity"
+      - stid: 36
+        field: "wind_speed_min"
+      - stid: 36
+        field: "wind_speed"
+      - stid: 36
+        field: "wind_gust"
+      - stid: 36
+        field: "wind_direction"
+      - stid: 35
+        field: "precip_accum_one_hour"
+      - stid: 35
+        field: "precip_cumsum"
+      - stid: 35
+        field: "snow_depth_24h"
+      - stid: 35
+        field: "snow_depth"
+      - stid: 36
+        field: "solar_radiation"
+
+  - name: "hood-timberline"
+    columns:
+      - stid: 44
+        field: "air_temp"
+      - stid: 44
+        field: "relative_humidity"
+      - stid: 56
+        field: "wind_speed_min"
+      - stid: 56
+        field: "wind_speed"
+      - stid: 56
+        field: "wind_gust"
+      - stid: 56
+        field: "wind_direction"
+      - stid: 44
+        field: "precip_accum_one_hour"
+      - stid: 44
+        field: "precip_cumsum"
+      - stid: 44
+        field: "snow_depth_24h"
+      - stid: 44
+        field: "snow_depth"
+
+  - name: "hood-timberline-magicmile"
+    columns:
+      - stid: 45
+        field: "air_temp"
+      - stid: 45
+        field: "relative_humidity"
+      - stid: 45
+        field: "wind_speed_min"
+      - stid: 45
+        field: "wind_speed"
+      - stid: 45
+        field: "wind_gust"
+      - stid: 45
+        field: "wind_direction"
+
+  - name: "tumwater"
+    columns:
+      - stid: 19
+        field: "air_temp"
+      - stid: 53
+        field: "air_temp"
+      - stid: 19
+        field: "relative_humidity"
+      - stid: 53
+        field: "relative_humidity"
+      - stid: 19
+        field: "wind_speed_min"
+      - stid: 19
+        field: "wind_speed"
+      - stid: 19
+        field: "wind_gust"
+      - stid: 19
+        field: "wind_direction"
+      - stid: 53
+        field: "precip_accum_one_hour"
+      - stid: 53
+        field: "precip_cumsum"
+      - stid: 53
+        field: "snow_depth_24h"
+      - stid: 53
+        field: "snow_depth"
+      - stid: 19
+        field: "snow_depth"
+
+  - name: "hood-skibowl"
+    columns:
+      - stid: 47
+        field: "air_temp"
+      - stid: 46
+        field: "air_temp"
+      - stid: 47
+        field: "relative_humidity"
+      - stid: 46
+        field: "relative_humidity"
+      - stid: 47
+        field: "wind_speed_min"
+      - stid: 47
+        field: "wind_speed"
+      - stid: 47
+        field: "wind_gust"
+      - stid: 47
+        field: "wind_direction"
+      - stid: 46
+        field: "precip_accum_one_hour"
+      - stid: 46
+        field: "precip_cumsum"
+      - stid: 47
+        field: "snow_depth"
+
+  - name: "snoqualmie"
+    columns:
+      - stid: 22
+        field: "air_temp"
+      - stid: 23
+        field: "air_temp"
+      - stid: 21
+        field: "air_temp"
+      - stid: 21
+        field: "relative_humidity"
+      - stid: 22
+        field: "wind_speed_min"
+      - stid: 22
+        field: "wind_speed"
+      - stid: 22
+        field: "wind_gust"
+      - stid: 22
+        field: "wind_direction"
+      - stid: 21
+        field: "precip_accum_one_hour"
+      - stid: 21
+        field: "precip_cumsum"
+      - stid: 21
+        field: "snow_depth_24h"
+      - stid: 21
+        field: "snow_depth"
+      - stid: 21
+        field: "pressure"
+
+  - name: "stevens-schmidthaus"
+    columns:
+      - stid: 13
+        field: "air_temp"
+      - stid: 13
+        field: "relative_humidity"
+      - stid: 13
+        field: "precip_accum_one_hour"
+      - stid: 13
+        field: "precip_cumsum"
+      - stid: 13
+        field: "snow_depth_24h"
+      - stid: 13
+        field: "snow_depth"
+      - stid: 13
+        field: "pressure"
+
+  - name: "stevens-brooks"
+    columns:
+      - stid: 50
+        field: "air_temp"
+      - stid: 50
+        field: "relative_humidity"
+      - stid: 50
+        field: "precip_accum_one_hour"
+      - stid: 50
+        field: "precip_cumsum"
+      - stid: 50
+        field: "snow_depth_24h"
+      - stid: 50
+        field: "snow_depth"
+
+  - name: "stevens-grace-lakes"
+    columns:
+      - stid: 14
+        field: "air_temp"
+      - stid: 14
+        field: "relative_humidity"
+      - stid: 51
+        field: "wind_speed_min"
+      - stid: 51
+        field: "wind_speed"
+      - stid: 51
+        field: "wind_gust"
+      - stid: 51
+        field: "wind_direction"
+      - stid: 14
+        field: "snow_depth"
+      - stid: 14
+        field: "intermittent_snow"
+
+  - name: "stevens-skyline"
+    columns:
+      - stid: 18
+        field: "air_temp"
+      - stid: 17
+        field: "air_temp"
+      - stid: 17
+        field: "relative_humidity"
+      - stid: 18
+        field: "wind_speed_min"
+      - stid: 18
+        field: "wind_speed"
+      - stid: 18
+        field: "wind_gust"
+      - stid: 18
+        field: "wind_direction"
+
+  - name: "sunrise"
+    columns:
+      - stid: 30
+        field: "air_temp"
+      - stid: 31
+        field: "air_temp"
+      - stid: 30
+        field: "relative_humidity"
+      - stid: 31
+        field: "relative_humidity"
+      - stid: 30
+        field: "wind_speed_min"
+      - stid: 30
+        field: "wind_speed"
+      - stid: 30
+        field: "wind_gust"
+      - stid: 30
+        field: "wind_direction"
+      - stid: 31
+        field: "snow_depth"
+
+  - name: "washington-pass"
+    columns:
+      - stid: 9
+        field: "air_temp"
+      - stid: 8
+        field: "air_temp"
+      - stid: 9
+        field: "relative_humidity"
+      - stid: 8
+        field: "relative_humidity"
+      - stid: 9
+        field: "wind_speed_min"
+      - stid: 9
+        field: "wind_speed"
+      - stid: 9
+        field: "wind_gust"
+      - stid: 9
+        field: "wind_direction"
+      - stid: 8
+        field: "precip_accum_one_hour"
+      - stid: 8
+        field: "precip_cumsum"
+      - stid: 8
+        field: "snow_depth"
+      - stid: 8
+        field: "equip_temperature"
+
+  - name: "whitechuck"
+    columns:
+      - stid: 57
+        field: "air_temp"
+      - stid: 57
+        field: "relative_humidity"
+      - stid: 57
+        field: "wind_speed_min"
+      - stid: 57
+        field: "wind_speed"
+      - stid: 57
+        field: "wind_gust"
+      - stid: 57
+        field: "wind_direction"
+      - stid: 57
+        field: "snow_depth"
+      - stid: 57
+        field: "solar_radiation"
+
+  - name: "white-pass"
+    columns:
+      - stid: 39
+        field: "air_temp"
+      - stid: 37
+        field: "air_temp"
+      - stid: 39
+        field: "relative_humidity"
+      - stid: 37
+        field: "relative_humidity"
+      - stid: 49
+        field: "wind_speed_min"
+      - stid: 49
+        field: "wind_speed"
+      - stid: 49
+        field: "wind_gust"
+      - stid: 49
+        field: "wind_direction"
+      - stid: 39
+        field: "precip_accum_one_hour"
+      - stid: 39
+        field: "precip_cumsum"
+      - stid: 39
+        field: "snow_depth_24h"
+      - stid: 39
+        field: "snow_depth"
