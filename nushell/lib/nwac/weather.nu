@@ -17,7 +17,7 @@ def inject-fields [] {
     $in | update STATION $patched_stations
 }
 
-export def wx [
+export def main [
     station?: string,
     --from (-f): datetime
     --to (-t): datetime

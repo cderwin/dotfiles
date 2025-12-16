@@ -36,7 +36,7 @@ def unescape-html [] {
         }
 }
 
-export def avy [
+export def main [
     zone?: string,
     --list (-l),
     --raw (-r),
