@@ -28,7 +28,7 @@ const character_table = {
     "trade": "™",
 }
 
-def unescape-html [] : [string: string] {
+def unescape-html [] {
     $character_table 
         | items {|key, val| [key, val]}
         | reduce -f $in { |item, blob|
