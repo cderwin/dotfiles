@@ -12,28 +12,18 @@ const forecast_zones = {
     "olympics": 1645,
 }
 
-const character_table = {
-    "nbsp": " ",
-    "lt": "<",
-    "gt": ">",
-    "amp": "&",
-    "quote": "\"",
-    "apos": "'",
-    "cent": "¢",
-    "pound": "£",
-    "yen": "¥",
-    "euro": "€",
-    "copy": "©",
-    "reg": "®",
-    "trade": "™",
+def unescape-html [] {
+    query web -q "p" | flatten | str join "\n\n"
 }
 
-def unescape-html [] {
-    $character_table 
-        | items {|key, val| [key, val]}
-        | reduce -f $in { |item, blob|
-            $blob | str replace $"&($item.0);" $item.1
-        }
+def parse-problems [] {
+    get forecast_avalanche_problems
+        | select rank name likelihood size location discussion
+        | update location {  parse "{cardinal} {band}" }
+        | update discussion { unescape-html }
+        | update size { {min: $in.0, max: $in.1} }
+        | rename -c {location: rose}
+        | sort-by rank
 }
 
 export def main [
@@ -42,6 +32,11 @@ export def main [
     --raw (-r),
 ] {
     if $list or $zone == null {
+        return ($forecast_zones | columns)
+    }
+
+    if not ($zone in $forecast_zones) {
+        print $"(ansi red)zone \"($zone)\" is not a valid forecast zone(ansi reset)"
         return ($forecast_zones | columns)
     }
 
@@ -58,15 +53,17 @@ export def main [
         return $fx_data
     }
 
+    let danger = $fx_data | get danger | where valid_day == current | select upper middle lower | into record
+    let danger_tomorrow = $fx_data | get danger | where valid_day == tomorrow | select upper middle lower | into record
     {
         zone: $fx_data.forecast_zone.name,
         link: $fx_data.forecast_zone.url,
         author: $fx_data.author,
         expires_at: ($fx_data.expires_time | into datetime),
-        danger: {},
-        danger_tomorrow: {},
+        danger: $danger,
+        danger_tomorrow: $danger_tomorrow,
         bottom_line: ($fx_data.bottom_line | unescape-html),
         discussion: ($fx_data.hazard_discussion | unescape-html),
-        problems: {},
+        problems: ($fx_data | parse-problems),
     }
 }

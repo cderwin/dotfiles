@@ -29,6 +29,11 @@ export def main [
         return $wx_config.weather_stations.name
     }
 
+    if not ($station in $wx_config.weather_stations.name) {
+        print $"no weather station \"($station)\""
+        return $wx_config.weather_stations.name
+    }
+
     mut to = $to
     if $to == null {
         $to = date now
