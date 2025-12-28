@@ -17,8 +17,13 @@ def inject-fields [] {
     $in | update STATION $patched_stations
 }
 
+def station-names [] {
+    let wx_config = open $wx_config_path
+    $wx_config.weather_stations | get name
+}
+
 export def main [
-    station?: string,
+    station?: string@station-names,
     --from (-f): datetime
     --to (-t): datetime
     --raw (-r),

@@ -26,8 +26,12 @@ def parse-problems [] {
         | sort-by rank
 }
 
+def zone-names [] {
+    $forecast_zones | columns
+}
+
 export def main [
-    zone?: string,
+    zone?: string@zone-names,
     --list (-l),
     --raw (-r),
 ] {
