@@ -5,3 +5,4 @@ nvim/lazy-lock.json
 bin/
 build/
 instant-launch/palantir-ca-bundle.crt
+.claude/
